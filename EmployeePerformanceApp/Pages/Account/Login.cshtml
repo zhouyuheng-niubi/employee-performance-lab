@@ -1,0 +1,38 @@
+﻿@page
+@model EmployeePerformanceApp.Pages.Account.LoginModel
+@{
+    ViewData["Title"] = "Login";
+} 
+
+<h1>Login</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Username"></label>
+        <input asp-for="Username" class="form-control" />
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" type="password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+@if (Model.ErrorMessage != null)
+{
+    <div class="alert alert-danger">@Model.ErrorMessage</div>
+}
+
+<br />
+<br />
+<h3>Some Precreated Accounts</h3>
+<br />
+<h4>UserName - John.Doe (Manager)</h4> 
+<h4>UserName - Jane.Smith (Employee)</h4> 
+<h4>UserName - Liam.Walker (HR)</h4> 
+
+<br />
+<h4>Password - YourSecurePassword123!</h4> 
+
